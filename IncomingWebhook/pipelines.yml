@@ -14,5 +14,5 @@ pipelines:
           - name: Upload
       execution:
           onExecute:
-            - echo "$res_MyIncomingWebhookResource_payload" | jq '.' > payload.json
+            - echo "$res_Upload_payload" | jq '.' > payload.json
             - read_json payload.json "LESSER_SECRET_FORMULA"

@@ -1,5 +1,5 @@
 resources:
-  - name: Upload_int
+  - name: Upload
     type: IncomingWebhook
     configuration:
       webhookName: Upload_int
@@ -11,7 +11,7 @@ pipelines:
       type: Bash
       configuration:
         inputResources:
-          - name: Upload_int
+          - name: Upload
       execution:
           onExecute:
             - echo "$res_MyIncomingWebhookResource_payload" | jq '.' > payload.json

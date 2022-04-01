@@ -1,18 +1,18 @@
 resources:
-  - name: Upload
+  - name: UploadRes
     type: IncomingWebhook
     configuration:
       webhookName: Upload_int
 
 pipelines:
-  - name: ExamplePipeline
+  - name: ExamplePipeline1
     steps:
     - name: ExampleStep
       type: Bash
       configuration:
         inputResources:
-          - name: Upload
+          - name: UploadRes
       execution:
           onExecute:
-            - echo "$res_Upload_payload" | jq '.' > payload.json
+            - echo "$res_UploadRes_payload" | jq '.' > payload.json
             - read_json payload.json "LESSER_SECRET_FORMULA"

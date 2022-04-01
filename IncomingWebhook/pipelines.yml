@@ -2,7 +2,7 @@ resources:
   - name: Upload_int
     type: IncomingWebhook
     configuration:
-      webhookName: Upload
+      webhookName: Upload_int
 
 pipelines:
   - name: ExamplePipeline

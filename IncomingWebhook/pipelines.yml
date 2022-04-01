@@ -14,5 +14,6 @@ pipelines:
           - name: UploadRes
       execution:
           onExecute:
+            - echo "job triggered by resource-> $step_triggered_by_resource_name"
             - echo "$res_UploadRes_payload" | jq '.' > payload.json
             - read_json payload.json "LESSER_SECRET_FORMULA"

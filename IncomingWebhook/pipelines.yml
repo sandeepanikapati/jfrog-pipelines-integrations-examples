@@ -16,11 +16,11 @@ pipelines:
           onExecute:
             - echo "job triggered by resource-> $step_triggered_by_resource_name"
             - echo "$res_Upload_payload" | jq '.' > payload.json
-            - read_json payload.json "data.name"
-            - read_json payload.json "LESSER_SECRET_FORMULA"
-            - echo "JFrog CLI"
+            - read_json payload.json "data.name" > "name"
+            - read_json payload.json "data.repo_key" > "repo_key"
+            - echo "JFrog CLI $name ---  $repo_key"
             - curl -fL https://install-cli.jfrog.io | sh
             - jfrog config add Art12 --url=https://muddanajv.jfrog.io/ --user=sandeep --password=Password123 --enc-password=false --interactive=false
-            - jf rt dl "data.repo_key/data.name"
+            - jf rt dl "repo_key/name"
             
 

@@ -25,5 +25,6 @@ pipelines:
             - jfrog config add Art12 --url=https://muddanajv.jfrog.io/ --user=sandeep --password=Password123 --enc-password=false --interactive=false
             - jf rt dl "$repo_key/$name"
             - pwd
+            - ls
             
 

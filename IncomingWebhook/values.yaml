@@ -1,0 +1,5 @@
+
+gitProvider: Pipelinescantest
+artifactory: artifactory_int
+artifactoryUrl: muddanajv.jfrog.io   # replace with your server name
+repoPath: sandeepanikapati/jfrog-pipelines-integrations-examples

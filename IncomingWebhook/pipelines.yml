@@ -33,7 +33,7 @@ pipelines:
             - sudo chmod 755 /usr/bin/azcopy
             - rm -f downloadazcopy-v10-linux
             - rm -rf ./azcopy_linux_amd64_*/
-            - azcopy copy '$name' 'https://sandeepa.blob.core.windows.net/fileupload?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-04-06T22:35:38Z&st=2022-04-06T14:35:38Z&spr=https&sig=H%2FGLPQ7sjTb5LtA26ZUk0myBfxFW0cKSzApyWTW0y8s%3D' --recursive
+            - azcopy copy "$name" 'https://sandeepa.blob.core.windows.net/fileupload?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-04-06T22:35:38Z&st=2022-04-06T14:35:38Z&spr=https&sig=H%2FGLPQ7sjTb5LtA26ZUk0myBfxFW0cKSzApyWTW0y8s%3D' --recursive
 
             
 

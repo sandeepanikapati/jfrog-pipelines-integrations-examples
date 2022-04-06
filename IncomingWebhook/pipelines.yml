@@ -3,6 +3,12 @@ resources:
     type: IncomingWebhook
     configuration:
       webhookName: Upload_int
+  - name: RemoteFile_1
+    type: RemoteFile
+    configuration:
+      source: Pipelinescantest
+      fileLocation: example-repo-local/ 
+      fileName: bs_result.txt # optional
 
 pipelines:
   - name: ExamplePipeline1
@@ -23,10 +29,8 @@ pipelines:
       - name: uploadArtifactStep
         type: UploadArtifact
         configuration:
-          targetPath: k-npm-local/myFile.txt
+          targetPath: k-npm-local/bs_result.txt
           integrations:
             - name: Pipelinescantest
-          inputResources:
-            - name: myInputRemoteFile
           outputResources:
-            - name: myOutputFileSpec
+            - name: RemoteFile_1

@@ -16,7 +16,7 @@ pipelines:
           onExecute:
             - echo "job triggered by resource-> $step_triggered_by_resource_name"
             - echo "$res_Upload_payload" | jq '.' > payload.json
-            - add_run_variables imageTag=read_json payload.json "data.name"
+            - add_run_variables name=read_json payload.json "data.name"
             - read_json payload.json "data.repo_key" > "repo_key"
             - echo "JFrog CLI $name ---  name"
             - curl -fL https://install-cli.jfrog.io | sh

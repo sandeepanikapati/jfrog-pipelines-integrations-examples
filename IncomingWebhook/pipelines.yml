@@ -6,7 +6,7 @@ resources:
   - name: RemoteFile_1
     type: RemoteFile
     configuration:
-      sourceArtifactory : {{ .Values.artifactory }}
+      source : Pipelinescantest
       fileLocation: example-repo-local/ 
       fileName: bs_result.txt # optional
 

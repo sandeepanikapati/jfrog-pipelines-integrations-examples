@@ -6,7 +6,7 @@ resources:
   - name: RemoteFile_1
     type: RemoteFile
     configuration:
-      source: {{ .Values.artifactory }}
+      sourceArtifactory : {{ .Values.artifactory }}
       fileLocation: example-repo-local/ 
       fileName: bs_result.txt # optional
 

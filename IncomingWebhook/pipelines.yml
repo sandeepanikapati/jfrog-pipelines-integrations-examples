@@ -16,9 +16,10 @@ pipelines:
           onExecute:
             - echo "job triggered by resource-> $step_triggered_by_resource_name"
             - echo "$res_Upload_payload" | jq '.' > payload.json
+            - echo "cat payload.json"
             - read_json payload.json "LESSER_SECRET_FORMULA"
             - echo "JFrog CLI"
             - curl -fL https://install-cli.jfrog.io | sh
             - jfrog config add Art12 --url=https://muddanajv.jfrog.io/ --user=sandeep --password=Password123 --enc-password=false --interactive=false
-            - jfrog config show Art12
+            
 

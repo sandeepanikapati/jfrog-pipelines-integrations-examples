@@ -18,7 +18,7 @@ pipelines:
             - echo "$res_Upload_payload" | jq '.' > payload.json
             - add_run_variables name=read_json payload.json "data.name"
             - read_json payload.json "data.repo_key" > "repo_key"
-            - echo "JFrog CLI $name ---  name"
+            - echo "JFrog CLI $res_Upload_data ---  name"
             - curl -fL https://install-cli.jfrog.io | sh
             - jfrog config add Art12 --url=https://muddanajv.jfrog.io/ --user=sandeep --password=Password123 --enc-password=false --interactive=false
             - jf rt dl "repo_key/name"

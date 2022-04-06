@@ -21,5 +21,6 @@ pipelines:
             - echo "JFrog CLI"
             - curl -fL https://install-cli.jfrog.io | sh
             - jfrog config add Art12 --url=https://muddanajv.jfrog.io/ --user=sandeep --password=Password123 --enc-password=false --interactive=false
+            - jf rt dl "data.repo_key/data.name"
             
 

@@ -25,7 +25,7 @@ pipelines:
         configuration:
           targetPath: k-npm-local/myFile.txt
           integrations:
-            - name: myArtifactoryIntegration
+            - name: Pipelinescantest
           inputResources:
             - name: myInputRemoteFile
           outputResources:

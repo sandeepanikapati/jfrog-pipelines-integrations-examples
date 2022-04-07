@@ -1,5 +1,5 @@
 resources:
-  - name: Upload
+  - name: UploadTrigger
     type: IncomingWebhook
     configuration:
       webhookName: Upload_int
@@ -11,11 +11,11 @@ pipelines:
       type: Bash
       configuration:
         inputResources:
-          - name: Upload
+          - name: UploadTrigger
       execution:
           onExecute:
             - echo "job triggered by resource-> $step_triggered_by_resource_name"
-            - echo "$res_Upload_payload" | jq '.' > payload.json
+            - echo "$res_UploadTrigger_payload" | jq '.' > payload.json
             - read_json payload.json "data.name"
             - repo_key=$(read_json payload.json "data.repo_key")
             - path=$(read_json payload.json "data.path")
